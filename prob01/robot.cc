@@ -1,9 +1,8 @@
-// Please fill in below.
-// <Your name>
-// <Your section number> (e.g. CPSC 121L-01)
-// <Date>
-// <Your csu.fullerton.edu email>
-// <Your GitHub username>
+// Jemin Song
+// CPSC 121L-02
+// 2/26/2024
+// jeminsong0119@csu.fullerton.edu
+// @jeminsong
 //
 // Lab 6-1
 // If it is a pair programming lab please specify partner below.
@@ -15,27 +14,16 @@
 
 #include "cpputils/graphics/image.h"
 
-// ========================= YOUR CODE HERE =========================
-// This implementation file (robot.cc) should hold the
-// implementation of member functions declared in the header (robot.h).
-//
-// Implement the following member functions, declared in robot.h:
-//   1. Robot constructor
-//   2. SetPosition
-//   3. GetX
-//   4. GetY
-//
-// Remember to specify the name of the class with :: in this format:
-//     <return type> MyClassName::MyFunction() {
-//        ...
-//     }
-// to tell the compiler that each function belongs to the Robot class.
-// ===================================================================
+Robot::Robot(const std::string& filename1, const std::string& filename2)
+    : filename1_(filename1), filename2_(filename2), color_(0, 0, 0) {}
+void Robot::SetPosition(int x, int y) {
+  x_ = x;
+  y_ = y;
+}
+int Robot::GetX() const { return x_; }
+int Robot::GetY() const { return y_; }
 
-// You don't need to modify these. These are helper functions
-// used to load the robot icons and draw them on the screen.
 void Robot::Draw(graphics::Image& image) {
-  // Load the image into the icon if needed.
   if (icon1_.GetWidth() <= 0) {
     icon1_.Load(filename1_);
   }
